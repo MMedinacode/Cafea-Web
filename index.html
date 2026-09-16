@@ -683,18 +683,26 @@ function updateHeaderMode(){
 window.addEventListener('scroll', updateHeaderMode);
 updateHeaderMode();
 
-/* Fotos de stock por categoría (Unsplash) — solo mientras el cliente no mande
-   fotos reales de sus propios productos. Reemplazar apenas las tenga. */
+/* ⚠️ 16-09-2026 — SE SACARON LAS 9 FOTOS DE STOCK.
+   Acá había nueve imágenes de Unsplash, una por categoría. Eran de otras
+   cafeterías: en una página que se le muestra al dueño para convencerlo,
+   la foto ajena es justo lo que delata que la demo no es suya.
+
+   Se reemplazaron por fotos REALES de su propia ficha de Google Maps.
+   Siete de las nueve categorías quedaron con foto suya. Las dos que no
+   —Jugos Naturales y Batidos— y Cookies se dejan SIN foto a propósito:
+   antes una foto de otro local, ninguna. El código de abajo ya maneja la
+   categoría sin imagen (`CAT_PHOTO[g.cat] ? ... : ''`).
+
+   La de Brownies va recortada: en el original una mano alcanza una
+   galleta, y se cortó la mitad superior para no publicar a nadie. */
 const CAT_PHOTO = {
-  "Brunch": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?q=80&w=1400&auto=format&fit=crop",
-  "Cafés & Más": "https://images.unsplash.com/photo-1534778101976-62847782c213?q=80&w=1400&auto=format&fit=crop",
-  "Jugos Naturales": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=1400&auto=format&fit=crop",
-  "Batidos": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?q=80&w=1400&auto=format&fit=crop",
-  "Horneados": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1400&auto=format&fit=crop",
-  "Cookies": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1400&auto=format&fit=crop",
-  "Tartas & Minis": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=1400&auto=format&fit=crop",
-  "Brownies": "https://images.unsplash.com/photo-1607920591413-4ec007e70023?q=80&w=1400&auto=format&fit=crop",
-  "Café en Grano": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1400&auto=format&fit=crop",
+  "Brunch": "fotos/cat-brunch.jpg",
+  "Cafés & Más": "fotos/cat-cafes.jpg",
+  "Horneados": "fotos/croissant-y-cafe-de-cafea.jpg",
+  "Tartas & Minis": "fotos/cat-tartas.jpg",
+  "Brownies": "fotos/cat-brownies.jpg",
+  "Café en Grano": "fotos/detalle-de-mostrador-y-branding-de-cafea.jpg",
 };
 
 /* ---- Category filters + menu render (grid balanceado con CSS columns) ---- */
